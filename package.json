@@ -1,0 +1,17 @@
+{
+  "name": "@werkzeugkiste/prettier-config",
+  "version": "1.0.0-beta.0",
+  "description": "Shared prettier config for @werkzeugkiste",
+  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
+  "license": "MIT",
+  "keywords": [
+    "prettier",
+    "tools"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
