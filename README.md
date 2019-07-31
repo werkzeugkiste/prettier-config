@@ -20,6 +20,12 @@ To use this config as base in any of your projects, create a .prettierrc.js file
 module.exports = require('@werkzeugkiste/prettier-config');
 ```
 
+Quick shell command:
+
+```bash
+echo "module.exports = require('@werkzeugkiste/prettier-config');" > .prettierrc.js
+```
+
 If you feel the urge to override some of the rules, you can do it this way:
 
 ```js
