@@ -14,11 +14,13 @@ npm install --develop @werkzeugkiste/prettier-config
 
 ## Usage
 
-To use this config as base in any of your projects, create a .prettierrc.js file in your project folder and add the following content:
+To use this config as base in any of your projects, create a `.prettierrc.js` file in your project folder and add the following content:
 
 ```js
 module.exports = require('@werkzeugkiste/prettier-config');
 ```
+
+**Important:** filename must be `.prettierrc.js` or `prettier.config.js` or otherwise Prettier will try to parse it as JSON or YML and will fail.
 
 Quick shell command:
 
