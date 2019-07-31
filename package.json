@@ -1,6 +1,9 @@
 {
   "name": "@werkzeugkiste/prettier-config",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Shared prettier config for @werkzeugkiste",
   "repository": "git@github.com:werkzeugkiste/prettier-config.git",
   "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
