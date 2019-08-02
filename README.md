@@ -1,4 +1,4 @@
-# @werkzeugkiste/prettier-config
+# @werkzeugkiste/prettier-config <img src="https://raw.githubusercontent.com/werkzeugkiste/prettier-config/master/prettier.svg?sanitize=true" height="40" align="right">
 
 This is the shared [Prettier](https://www.prettier.io) config for all things [@werkzeugkiste](https://www.github.com/werkzeugkiste) related.
 
@@ -32,8 +32,8 @@ If you feel the urge to override some of the rules, you can do it this way:
 
 ```js
 module.exports = {
-    ...require('@werkzeugkiste/prettier-config'),
-    // add your overrides here
+  ...require('@werkzeugkiste/prettier-config'),
+  // add your overrides here
 };
 ```
 
