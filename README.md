@@ -12,6 +12,12 @@ yarn add --dev @werkzeugkiste/prettier-config
 npm install --develop @werkzeugkiste/prettier-config
 ```
 
+Afterwards install all `peerDependencies` into your project:
+
+```sh
+npx install-peerdeps --dev @werkzeugkiste/prettier-config
+```
+
 ## Usage
 
 To use this config as base in any of your projects, create a `.prettierrc.js` file in your project folder and add the following content:
