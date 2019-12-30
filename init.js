@@ -1,3 +1,4 @@
+#! /usr/env node
 const fs = require('fs');
 
 const configFileExists = fs.existsSync('./.prettierrc.js');
