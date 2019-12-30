@@ -67,7 +67,8 @@ try {
     console.log('Writing config to', path.join(process.cwd(), '.prettierrc.js'));
     fs.writeFileSync(
         path.join(process.cwd(), '/.prettierrc.js'),
-        "module.exports = require('@werkzeugkiste/prettier-config');"
+        `module.exports = require('@werkzeugkiste/prettier-config');
+`
     );
     console.log('Config written successfully! ✅');
     process.exit(0);

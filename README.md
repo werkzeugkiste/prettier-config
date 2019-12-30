@@ -12,15 +12,28 @@ yarn add --dev @werkzeugkiste/prettier-config
 npm install --develop @werkzeugkiste/prettier-config
 ```
 
-Afterwards install all `peerDependencies` into your project:
+Afterwards install all `peerDependencies` into your project and create a `.prettierrc.js` file:
 
-```sh
+```bash
+# install peer dependencies:
 npx install-peerdeps --dev @werkzeugkiste/prettier-config
+
+# create .prettierrc.js config file:
+npx @werkzeugkiste/prettier-config
 ```
 
-## Usage
+## Setup
 
-To use this config as base in any of your projects, create a `.prettierrc.js` file in your project folder and add the following content:
+To use this config as base in any of your projects, you need to create a `.prettierrc.js` file in your project folder that re-exports the Prettier config from `@werkzeugkiste/prettier-config`.
+
+You can either do that automatically by running the following command in the root folder of your project (where your package.json is):
+
+```bash
+# create .prettierrc.js config file:
+npx @werkzeugkiste/prettier-config
+```
+
+or by manually adding the following content:
 
 ```js
 module.exports = require('@werkzeugkiste/prettier-config');
@@ -28,7 +41,7 @@ module.exports = require('@werkzeugkiste/prettier-config');
 
 **Important:** filename must be `.prettierrc.js` or `prettier.config.js` or otherwise Prettier will try to parse it as JSON or YML and will fail.
 
-Quick shell command:
+Quick copy+paste shell command:
 
 ```bash
 echo "module.exports = require('@werkzeugkiste/prettier-config');" > .prettierrc.js
