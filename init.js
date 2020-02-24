@@ -2,10 +2,22 @@
 const fs = require('fs');
 const path = require('path');
 
-const configFileExists = fs.existsSync('./.prettierrc.js');
+const checkForPackageJson = () => {
+    if (fs.existsSync(path.join(process.cwd(), 'package.json')) === false) {
+        console.error(
+            "ERROR: Could not generate Prettier config because package.json does not exist. Run this command from within your project's root folder"
+        );
+        process.exit(1);
+    }
+};
+
+checkForPackageJson();
+
+const configFilePath = path.join(process.cwd(), '.prettierrc.js');
+const configFileExists = fs.existsSync(configFilePath);
 
 if (configFileExists) {
-    console.warn('WARNING: Prettier config (.prettierrc) already exists. Doing nothing.');
+    console.warn('WARNING: Prettier config (.prettierrc.js) already exists. Doing nothing.');
     console.warn('Check https://github.com/werkzeugkiste/prettier-config for more infos.');
     process.exit(0);
 }
@@ -15,6 +27,7 @@ const alternativeConfigFilenames = [
     '.prettierrc.json',
     '.prettierrc.yaml',
     '.prettierrc.yml',
+    '.prettierrc.cjs',
     'prettier.config.js',
     '.prettierrc.toml',
 ];
@@ -31,13 +44,6 @@ const checkAlternativeConfigFilenames = () => {
 };
 
 const doesPackageJsonConfigExist = () => {
-    if (fs.existsSync(path.join(process.cwd(), 'package.json')) === false) {
-        console.error(
-            "ERROR: package.json does not exist. Run this command from within your project's root folder"
-        );
-        process.exit(1);
-    }
-
     const pkg = require(path.join(process.cwd(), 'package.json'));
     if (pkg && pkg.prettier) {
         return true;
@@ -64,13 +70,9 @@ if (alternativeConfigFileExists) {
 
 try {
     console.log('');
-    console.log('Writing config to', path.join(process.cwd(), '.prettierrc.js'));
-    fs.writeFileSync(
-        path.join(process.cwd(), '/.prettierrc.js'),
-        `module.exports = require('@werkzeugkiste/prettier-config');
-`
-    );
-    console.log('Config written successfully! ✅');
+    console.log('Writing config to', configFilePath);
+    fs.writeFileSync(configFilePath, `module.exports = require('@werkzeugkiste/prettier-config');`);
+    console.log('Prettier config written successfully! ✅');
     process.exit(0);
 } catch (_error) {
     console.error(

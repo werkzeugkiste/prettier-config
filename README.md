@@ -24,7 +24,7 @@ npx @werkzeugkiste/prettier-config
 
 ## Setup
 
-To use this config as base in any of your projects, you need to create a `.prettierrc.js` file in your project folder that re-exports the Prettier config from `@werkzeugkiste/prettier-config`.
+If you want to use this config as base in any of your projects, you need to create a `.prettierrc.js` file in your project folder that re-exports the Prettier config from `@werkzeugkiste/prettier-config`.
 
 You can either do that automatically by running the following command in the root folder of your project (where your package.json is):
 

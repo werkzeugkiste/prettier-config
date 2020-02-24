@@ -6,14 +6,14 @@
   },
   "description": "Shared prettier config for @werkzeugkiste",
   "repository": "git@github.com:werkzeugkiste/prettier-config.git",
-  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
-  "homepage": "https://github.com/werkzeugkiste/prettier-config",
-  "license": "MIT",
-  "bin": "init.js",
   "keywords": [
     "prettier",
     "tools"
   ],
+  "author": "Manuel Bieh <info@manuelbieh.de> (https://www.manuelbieh.de/)",
+  "homepage": "https://github.com/werkzeugkiste/prettier-config",
+  "license": "MIT",
+  "bin": "init.js",
   "files": [
     "init.js",
     "index.json",
