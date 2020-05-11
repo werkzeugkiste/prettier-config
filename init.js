@@ -73,6 +73,9 @@ try {
     console.log('Writing config to', configFilePath);
     fs.writeFileSync(configFilePath, `module.exports = require('@werkzeugkiste/prettier-config');`);
     console.log('Prettier config written successfully! ✅');
+    console.log(
+        'Please run `npx install-peerdeps --dev @werkzeugkiste/prettier-config` to install required dependencies.'
+    );
     process.exit(0);
 } catch (_error) {
     console.error(
